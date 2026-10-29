@@ -1,0 +1,10 @@
+{
+  "name": "200-meds-course",
+  "version": "1.0.0",
+  "description": "Learning website for meditations",
+  "scripts": {
+    "test": "node --test"
+  },
+  "type": "module",
+  "private": true
+}
