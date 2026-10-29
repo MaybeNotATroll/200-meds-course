@@ -21,25 +21,37 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Learn at your own pace</p>
-            <h1 id="study-title">Your medication study desk</h1>
-            <p class="intro">Get to know each medication, its category, and its primary use.</p>
+            <h1 id="study-title">Match the medication</h1>
+            <p class="intro">Five random medications from the complete list. Can you match each one to its primary use?</p>
           </div>
           <button id="open-cheat-sheet" class="button primary" type="button">Cheat Sheet</button>
         </div>
-        <div class="search-panel">
-          <label for="medication-search">Find a medication</label>
-          <input id="medication-search" type="search" placeholder="Search generic name, brand, or category…" autocomplete="off" aria-controls="medication-cards">
-          <p id="search-summary" class="muted" role="status"></p>
+        <p id="matching-instructions" class="muted">Drag a line from a medication to its use, or select a medication and then a use (with a mouse, touch, or Tab and Enter). Each use can be matched once. Select again to change a match.</p>
+        <p id="round-summary" class="muted"></p>
+        <div id="matching-board" class="matching-board" aria-describedby="matching-instructions">
+          <svg id="matching-lines" aria-hidden="true"></svg>
+          <div class="matching-column">
+            <h2>Medications</h2>
+            <div id="matching-prompts" class="matching-items"></div>
+          </div>
+          <div class="matching-column">
+            <h2>Primary uses</h2>
+            <div id="matching-uses" class="matching-items"></div>
+          </div>
         </div>
-        <div id="medication-cards" class="card-grid"></div>
-        <p id="study-empty" class="empty-state"></p>
+        <div class="matching-actions">
+          <button id="check-answers" class="button primary" type="button" disabled>Check my answers</button>
+          <button id="new-round" class="button secondary" type="button">New round</button>
+        </div>
+        <p id="matching-status" role="status" aria-live="polite"></p>
+        <ol id="matching-results" class="matching-results" hidden></ol>
       </section>
       <section id="cheat-sheet-view" aria-labelledby="cheat-sheet-title" hidden>
         <div class="section-heading">
           <div>
             <p class="eyebrow">The complete reference</p>
             <h1 id="cheat-sheet-title" tabindex="-1">Medication cheat sheet</h1>
-            <p class="intro">All medications, categories, and primary uses—regardless of your search.</p>
+            <p class="intro">All medications, categories, and primary uses from the complete list.</p>
           </div>
           <button id="close-cheat-sheet" class="button primary" type="button">← Back to studying</button>
         </div>
@@ -47,7 +59,7 @@
         <ul id="cheat-sheet-list" class="reference-list"></ul>
         <p id="cheat-sheet-empty" class="empty-state">No medications have been added yet. Your complete reference will appear here once the medication list is provided.</p>
       </section>
-      <noscript><p class="empty-state">Enable JavaScript to search and study the medication list.</p></noscript>
+      <noscript><p class="empty-state">Enable JavaScript to match and study the medication list.</p></noscript>
     </main>
     <footer class="container">PTCB exam preparation · For study purposes, not medical advice.</footer>
   </body>
