@@ -235,7 +235,7 @@ export function searchMedications(records, query) {
   );
 }
 
-// Shared data contract for a future matching game; no rounds or gameplay yet.
+// Shared data contract for the matching game.
 export const matchingGameConfig = Object.freeze({ medicationsPerRound: 5 });
 
 export function getMatchingItems(records) {
