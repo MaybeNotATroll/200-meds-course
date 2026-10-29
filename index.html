@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#174d45">
+    <title>PTCB Medication Study</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="site-name" href="./">PTCB · Study desk</a>
+        <span class="badge">Medication essentials</span>
+      </div>
+    </header>
+    <main class="container">
+      <section id="study-view" aria-labelledby="study-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Learn at your own pace</p>
+            <h1 id="study-title">Your medication study desk</h1>
+            <p class="intro">Get to know each medication, its category, and its primary use.</p>
+          </div>
+          <button id="open-cheat-sheet" class="button primary" type="button">Cheat Sheet</button>
+        </div>
+        <div class="search-panel">
+          <label for="medication-search">Find a medication</label>
+          <input id="medication-search" type="search" placeholder="Search generic name, brand, or category…" autocomplete="off" aria-controls="medication-cards">
+          <p id="search-summary" class="muted" role="status"></p>
+        </div>
+        <div id="medication-cards" class="card-grid"></div>
+        <p id="study-empty" class="empty-state"></p>
+      </section>
+      <section id="cheat-sheet-view" aria-labelledby="cheat-sheet-title" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The complete reference</p>
+            <h1 id="cheat-sheet-title" tabindex="-1">Medication cheat sheet</h1>
+            <p class="intro">All medications, categories, and primary uses—regardless of your search.</p>
+          </div>
+          <button id="close-cheat-sheet" class="button primary" type="button">← Back to studying</button>
+        </div>
+        <p id="cheat-sheet-summary" class="muted"></p>
+        <ul id="cheat-sheet-list" class="reference-list"></ul>
+        <p id="cheat-sheet-empty" class="empty-state">No medications have been added yet. Your complete reference will appear here once the medication list is provided.</p>
+      </section>
+      <noscript><p class="empty-state">Enable JavaScript to search and study the medication list.</p></noscript>
+    </main>
+    <footer class="container">PTCB exam preparation · For study purposes, not medical advice.</footer>
+  </body>
+</html>
